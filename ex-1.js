@@ -5,24 +5,21 @@
 // หรือ Empty Array เนื่องจากไม่มีสมาชิกตัวใดที่บวกกันแล้วได้ผลลัพธ์เท่ากับ `23`
 
 function twoSum(numbers, target) {
-  const numMap = {};
-
   for (let i = 0; i < numbers.length; i++) {
-    const currentNum = numbers[i];
-    const findnum = target - currentNum;
+    const currentNum = numbers[i]; //2
+    const findnum = target - currentNum; //7
 
     for (let j = 0; j < i; j++) {
-      if (numMap[numbers[j]] === findnum) {
+      if (numbers[j] === findnum) {
         return [j, i];
       }
     }
-    numMap[currentNum] = currentNum;
   }
 
   return [];
 }
 
-const numbers = [2, 7, 11, 15];
+const numbers = [11, 2, 7, 15];
 const target1 = 9;
 const target2 = 23;
 
